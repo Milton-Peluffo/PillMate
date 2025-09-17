@@ -20,10 +20,11 @@ val FontSoftPurple = Color(0xFF9F93B8)
 val AppBackground = Color(0xFFFAFAFE)
 
 val InputPlaceHolder = Color(0xFFC3B6D6)
-val InputBorderUnfocused = Color(0xFFC3B6D6)
+val InputBorderUnfocused = Color(0xFFDBD1E8)
 val InputBorderfocused = Color(0xFFC0ADDC)
 
 val ToggleButtonBackground = Color(0xFFFAF5FD)
 val ToggleButtonOutline = Color(0xFF8873D8)
+val ToggleButtonOutline2 = Color(0xFFF7F0FD)
 
 val ButtonPurple = Color(0xFF9D85F2)

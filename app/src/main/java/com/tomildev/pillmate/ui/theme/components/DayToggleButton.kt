@@ -3,6 +3,7 @@ package com.tomildev.pillmate.ui.theme.components
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
@@ -18,6 +19,7 @@ import com.tomildev.pillmate.ui.theme.theme.FontDarkPurple
 import com.tomildev.pillmate.ui.theme.theme.ToggleButtonBackground
 import com.tomildev.pillmate.ui.theme.theme.ButtonPurple
 import com.tomildev.pillmate.ui.theme.theme.ToggleButtonOutline
+import com.tomildev.pillmate.ui.theme.theme.ToggleButtonOutline2
 
 @Composable
 fun DayToggleButton(
@@ -29,16 +31,19 @@ fun DayToggleButton(
 
     Box(
         modifier = Modifier
-            .size(50.dp)
+            .size(48.dp)
             .background(
                 color = if (isSelected) ButtonPurple else ToggleButtonBackground,
                 shape = shape
             )
             .then(
                 if (isSelected) Modifier.border(2.dp, ToggleButtonOutline, shape)
-                else Modifier
+                else Modifier.border(2.dp, ToggleButtonOutline2, shape)
             )
-            .clickable { onClick() },
+            .clickable(
+                indication = null,
+                interactionSource = remember { MutableInteractionSource() }
+            ) { onClick() },
         contentAlignment = Alignment.Center
     ) {
         Text(

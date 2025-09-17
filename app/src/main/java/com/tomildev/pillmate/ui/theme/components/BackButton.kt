@@ -34,8 +34,8 @@ fun BackButton(
             modifier = Modifier
                 .clickable(
                     onClick = onClick,
-                    indication = null, // 🔑 elimina el ripple
-                    interactionSource = remember { MutableInteractionSource() } // necesario para quitar efectos
+                    indication = null,
+                    interactionSource = remember { MutableInteractionSource() }
                 )
         ) {
             Image(

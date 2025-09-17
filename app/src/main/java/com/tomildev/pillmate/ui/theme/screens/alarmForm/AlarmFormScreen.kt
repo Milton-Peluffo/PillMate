@@ -8,6 +8,7 @@ import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -28,6 +29,8 @@ fun AlarmFormScreen(
     onCancel: () -> Unit = {}
 ) {
     var medicineName by remember { mutableStateOf("") }
+    var medicineQuantity by remember { mutableStateOf("") }
+    var medicineHour by remember { mutableStateOf("") }
     var repeatHours by remember { mutableStateOf("") }
     var selectedDays by remember { mutableStateOf(setOf<String>()) }
 
@@ -47,7 +50,7 @@ fun AlarmFormScreen(
 
         Text(
             text = "Agregar Alarma",
-            fontSize = 34.sp,
+            fontSize = 38.sp,
             fontWeight = FontWeight.Bold,
             color = FontDarkPurple
         )
@@ -66,7 +69,7 @@ fun AlarmFormScreen(
             onValueChange = { medicineName = it },
             leadingIcon = {
                 Icon(
-                    imageVector = Icons.Filled.AddCircle,
+                    painter = painterResource(id = R.drawable.pill_icon),
                     contentDescription = "Medicamento",
                     tint = FontDarkPurple
                 )
@@ -81,12 +84,12 @@ fun AlarmFormScreen(
             color = FontDarkPurple
         )
         InputField(
-            placeholder = "Ej: 20ml",
-            value = "",
-            onValueChange = {},
+            placeholder = "Ej: 2 pastillas de 20ml",
+            value = medicineQuantity,
+            onValueChange = { medicineQuantity = it },
             leadingIcon = {
                 Icon(
-                    imageVector = Icons.Filled.DateRange,
+                    painter = painterResource(id = R.drawable.pills_quantity),
                     contentDescription = "cantidad",
                     tint = FontDarkPurple
                 )
@@ -102,11 +105,11 @@ fun AlarmFormScreen(
         )
         InputField(
             placeholder = "Seleccionar",
-            value = "",
-            onValueChange = {},
+            value = medicineHour,
+            onValueChange = { medicineHour = it },
             leadingIcon = {
                 Icon(
-                    imageVector = Icons.Filled.DateRange,
+                    painter = painterResource(id = R.drawable.clock),
                     contentDescription = "Hora",
                     tint = FontDarkPurple
                 )
@@ -146,7 +149,7 @@ fun AlarmFormScreen(
         )
         Text(
             text = "(opcional)",
-            fontWeight = FontWeight.Normal,
+            fontWeight = FontWeight.Bold,
             fontSize = 16.sp,
             color = FontSoftPurple
         )
@@ -156,7 +159,7 @@ fun AlarmFormScreen(
             onValueChange = { repeatHours = it },
             leadingIcon = {
                 Icon(
-                    imageVector = Icons.Filled.DateRange,
+                    painter = painterResource(id = R.drawable.stopwatch),
                     contentDescription = "Repetición",
                     tint = FontDarkPurple
                 )
@@ -179,19 +182,19 @@ fun AlarmFormScreen(
                 fontWeight = FontWeight.Bold
             )
         }
-
-        TextButton(
-            onClick = onCancel,
-            modifier = Modifier.fillMaxWidth().height(50.dp),
-            shape = RoundedCornerShape(19.dp)
-            ) {
-            Text(
-                text = "Cancelar",
-                fontSize = 19.sp,
-                color = FontDarkPurple,
-                fontWeight = FontWeight.Bold
-            )
-        }
+//
+//        TextButton(
+//            onClick = onCancel,
+//            modifier = Modifier.fillMaxWidth().height(50.dp),
+//            shape = RoundedCornerShape(19.dp)
+//            ) {
+//            Text(
+//                text = "Cancelar",
+//                fontSize = 19.sp,
+//                color = FontDarkPurple,
+//                fontWeight = FontWeight.Bold
+//            )
+//        }
     }
 }
 
