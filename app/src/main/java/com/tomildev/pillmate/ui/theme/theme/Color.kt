@@ -12,13 +12,18 @@ val Pink40 = Color(0xFF7D5260)
 
 //CUSTOM COLORS
 
+val FontDarkPurple = Color(0xFF554479)
+val FontDarkPurple2 = Color(0xFF463F60)
+
+val FontSoftPurple = Color(0xFF9F93B8)
+
 val AppBackground = Color(0xFFFAFAFE)
 
 val InputPlaceHolder = Color(0xFFC3B6D6)
 val InputBorderUnfocused = Color(0xFFC3B6D6)
 val InputBorderfocused = Color(0xFFC0ADDC)
-val FontColor = Color(0xFF554479)
-val ButtonColor = Color(0xFF9D85F2)
 
-val ToggleBackground = Color(0xFFFAF5FD)
-val ToggleOutline = Color(0xFF8873D8)
+val ToggleButtonBackground = Color(0xFFFAF5FD)
+val ToggleButtonOutline = Color(0xFF8873D8)
+
+val ButtonPurple = Color(0xFF9D85F2)
