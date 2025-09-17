@@ -1,4 +1,4 @@
-package com.tomildev.pillmate.ui.theme
+package com.tomildev.pillmate.ui.theme.theme
 
 import androidx.compose.ui.graphics.Color
 
