@@ -81,7 +81,7 @@ fun AlarmFormScreen(
             color = FontDarkPurple
         )
         InputField(
-            placeholder = "Ej: 2 pastillas de 20ml",
+            placeholder = "Ej: 2 pastillas de 200mg",
             value = medicineQuantity,
             onValueChange = { medicineQuantity = it },
             leadingIcon = {

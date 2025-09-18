@@ -14,6 +14,7 @@ val Pink40 = Color(0xFF7D5260)
 
 val FontDarkPurple = Color(0xFF554479)
 val FontDarkPurple2 = Color(0xFF463F60)
+val FontDarkPurple3 = Color(0xFF5B5476)
 
 val FontSoftPurple = Color(0xFF9F93B8)
 
