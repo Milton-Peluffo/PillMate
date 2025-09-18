@@ -34,7 +34,7 @@ fun AlarmCard(
         tonalElevation = 1.dp,
         modifier = Modifier
             .fillMaxWidth()
-            .padding(8.dp),
+            .padding(5.dp),
         color = Color(0xFFFDFDFE),
         border = BorderStroke(1.dp, ToggleButtonOutline2)
     ) {
@@ -51,7 +51,7 @@ fun AlarmCard(
                     style = MaterialTheme.typography.bodyLarge.copy(
                         fontWeight = FontWeight.Bold,
                         color = FontDarkPurple2,
-                        fontSize = 20.sp
+                        fontSize = 23.sp
                     )
                 )
 
@@ -59,7 +59,7 @@ fun AlarmCard(
                     text = "Tiempo restante: $remainingTime",
                     style = MaterialTheme.typography.bodySmall.copy(
                         color = FontDarkPurple3,
-                        fontSize = 13.sp,
+                        fontSize = 15.sp,
                         fontWeight = FontWeight.Bold
                         ),
                     modifier = Modifier.padding(top = 2.dp, bottom = 1.dp)
@@ -69,7 +69,7 @@ fun AlarmCard(
                     text = alarmTime,
                     style = MaterialTheme.typography.headlineMedium.copy(
                         fontWeight = FontWeight.Bold,
-                        fontSize = 30.sp,
+                        fontSize = 35.sp,
                         color = FontDarkPurple3
                     ),
                     modifier = Modifier.padding(top = 2.dp, bottom = 1.dp)
@@ -80,7 +80,7 @@ fun AlarmCard(
                     style = MaterialTheme.typography.bodySmall.copy(
                         fontWeight = FontWeight.Bold,
                         color = Color(0xFF3A345E),
-                        fontSize = 14.sp
+                        fontSize = 15.sp
                     ),
                     modifier = Modifier.padding(top = 2.dp)
                 )

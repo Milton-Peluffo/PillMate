@@ -10,17 +10,20 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.tomildev.pillmate.R
 import com.tomildev.pillmate.ui.theme.theme.FontDarkPurple
 import com.tomildev.pillmate.ui.theme.components.InputField
 import com.tomildev.pillmate.ui.theme.components.DayToggleButton
 import com.tomildev.pillmate.ui.theme.components.BackButton
+import com.tomildev.pillmate.ui.theme.navigations.AppScreen
 import com.tomildev.pillmate.ui.theme.theme.ButtonPurple
 import com.tomildev.pillmate.ui.theme.theme.FontDarkPurple2
 import com.tomildev.pillmate.ui.theme.theme.FontSoftPurple
 
 @Composable
 fun AlarmFormScreen(
+    navController: NavController,
     onBack: () -> Unit = {},
     onSave: () -> Unit = {},
     onCancel: () -> Unit = {}
@@ -40,9 +43,11 @@ fun AlarmFormScreen(
         verticalArrangement = Arrangement.spacedBy(6.dp)
     ) {
         BackButton(
+            onClick = {
+                navController.navigate(AppScreen.AlarmListScreen.route)
+            },
             iconRes = R.drawable.arrow_left,
             contentDescription = "Atrás",
-            onClick = onBack
         )
 
         Text(
@@ -195,8 +200,8 @@ fun AlarmFormScreen(
     }
 }
 
-@Preview(showBackground = true, showSystemUi = true)
-@Composable
-fun AlarmFormScreenPreview() {
-    AlarmFormScreen()
-}
+//@Preview(showBackground = true, showSystemUi = true)
+//@Composable
+//fun AlarmFormScreenPreview() {
+//    AlarmFormScreen()
+//}
