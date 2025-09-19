@@ -60,7 +60,7 @@ fun AlarmFormScreen(
         Spacer(modifier = Modifier.height(10.dp))
         Text(
             text = "Nombre de la medicina",
-            fontSize = 19.sp,
+            fontSize = 21.sp,
             fontWeight = FontWeight.Bold,
             color = FontDarkPurple2
         )
@@ -81,7 +81,7 @@ fun AlarmFormScreen(
         Spacer(modifier = Modifier.height(10.dp))
         Text(
             text = "Cantidad",
-            fontSize = 19.sp,
+            fontSize = 21.sp,
             fontWeight = FontWeight.Bold,
             color = FontDarkPurple
         )
@@ -101,7 +101,7 @@ fun AlarmFormScreen(
         Spacer(modifier = Modifier.height(10.dp))
         Text(
             text = "Hora",
-            fontSize = 19.sp,
+            fontSize = 21.sp,
             fontWeight = FontWeight.Bold,
             color = FontDarkPurple
         )
@@ -121,7 +121,7 @@ fun AlarmFormScreen(
         Spacer(modifier = Modifier.height(10.dp))
         Text(
             text = "Repetir",
-            fontSize = 19.sp,
+            fontSize = 21.sp,
             fontWeight = FontWeight.Bold,
             color = FontDarkPurple
         )
@@ -146,13 +146,13 @@ fun AlarmFormScreen(
         Text(
             text = "¿Cada cuántas horas se repite?",
             fontWeight = FontWeight.Bold,
-            fontSize = 19.sp,
+            fontSize = 21.sp,
             color = FontDarkPurple
         )
         Text(
             text = "(opcional)",
             fontWeight = FontWeight.Bold,
-            fontSize = 16.sp,
+            fontSize = 21.sp,
             color = FontSoftPurple
         )
         InputField(
@@ -179,7 +179,7 @@ fun AlarmFormScreen(
         ) {
             Text(
                 text = "Guardar Alarma",
-                fontSize = 19.sp,
+                fontSize = 21.sp,
                 color = MaterialTheme.colorScheme.onPrimary,
                 fontWeight = FontWeight.Bold
             )

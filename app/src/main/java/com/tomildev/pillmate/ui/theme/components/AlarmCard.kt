@@ -51,7 +51,7 @@ fun AlarmCard(
                     style = MaterialTheme.typography.bodyLarge.copy(
                         fontWeight = FontWeight.Bold,
                         color = FontDarkPurple2,
-                        fontSize = 23.sp
+                        fontSize = 24.sp
                     )
                 )
 
@@ -68,7 +68,7 @@ fun AlarmCard(
                 Text(
                     text = alarmTime,
                     style = MaterialTheme.typography.headlineMedium.copy(
-                        fontWeight = FontWeight.Bold,
+                        fontWeight = FontWeight.Medium,
                         fontSize = 35.sp,
                         color = FontDarkPurple3
                     ),

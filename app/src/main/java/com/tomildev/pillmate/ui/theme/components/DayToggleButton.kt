@@ -48,7 +48,7 @@ fun DayToggleButton(
     ) {
         Text(
             text = day,
-            fontSize = 14.sp,
+            fontSize = 15.sp,
             fontWeight = FontWeight.Bold,
             color = if (isSelected) Color.White else FontDarkPurple
         )

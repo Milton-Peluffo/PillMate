@@ -1,5 +1,6 @@
 package com.tomildev.pillmate.ui.theme.screens.alarmList
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -8,6 +9,7 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -43,9 +45,7 @@ fun AlarmListScreen(
             TopAppBar(
                 modifier = Modifier.height(65.dp),
                 title = {
-                    Box(
-                        modifier = Modifier.fillMaxWidth(),
-                    ) {
+                    Box(modifier = Modifier.fillMaxWidth()) {
                         Text(
                             text = "PillMate",
                             color = FontDarkPurple2,
@@ -53,7 +53,6 @@ fun AlarmListScreen(
                             fontSize = 20.sp,
                             modifier = Modifier.align(Alignment.Center)
                         )
-
                         IconButton(
                             onClick = { onMenuClick() },
                             modifier = Modifier.align(Alignment.CenterEnd)
@@ -92,7 +91,7 @@ fun AlarmListScreen(
         },
         floatingActionButtonPosition = FabPosition.Center,
     ) { innerPadding ->
-        Column(
+        Box(
             modifier = Modifier
                 .fillMaxSize()
                 .padding(
@@ -101,35 +100,58 @@ fun AlarmListScreen(
                     end = 9.dp
                 )
         ) {
-            Text(
-                text = "Mis Alarmas",
-                style = MaterialTheme.typography.headlineSmall.copy(
-                    fontSize = 38.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = FontDarkPurple
-                ),
-                modifier = Modifier.padding(bottom = 12.dp, start = 4.dp)
-            )
-
-            LazyColumn(
-                modifier = Modifier.fillMaxSize(),
-                contentPadding = PaddingValues(bottom = 4.dp)
+            Column(
+                modifier = Modifier.fillMaxSize()
             ) {
-                items(alarmList) { alarm ->
-                    AlarmCard(
-                        medicineName = alarm.medicineName,
-                        remainingTime = alarm.remainingTime,
-                        alarmTime = alarm.alarmTime,
-                        repeatText = alarm.repeatText,
-                        isActive = alarm.isActive,
-                        onToggle = { isChecked ->
-                            alarmList = alarmList.map {
-                                if (it == alarm) it.copy(isActive = isChecked) else it
+                Text(
+                    text = "Mis Alarmas",
+                    style = MaterialTheme.typography.headlineSmall.copy(
+                        fontSize = 38.sp,
+                        fontWeight = FontWeight.Bold,
+                        color = FontDarkPurple
+                    ),
+                    modifier = Modifier.padding(bottom = 12.dp, start = 4.dp)
+                )
+
+                LazyColumn(
+                    modifier = Modifier.fillMaxSize(),
+                    contentPadding = PaddingValues(bottom = 120.dp)
+                ) {
+                    items(alarmList) { alarm ->
+                        AlarmCard(
+                            medicineName = alarm.medicineName,
+                            remainingTime = alarm.remainingTime,
+                            alarmTime = alarm.alarmTime,
+                            repeatText = alarm.repeatText,
+                            isActive = alarm.isActive,
+                            onToggle = { isChecked ->
+                                alarmList = alarmList.map {
+                                    if (it == alarm) it.copy(isActive = isChecked) else it
+                                }
                             }
-                        }
-                    )
+                        )
+                    }
                 }
             }
+
+            //Grading zone
+            Box(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .height(160.dp)
+                    .align(Alignment.BottomCenter)
+                    .background(
+                        brush = Brush.verticalGradient(
+                            colors = listOf(
+                                Color.White,
+                                Color.White.copy(alpha = 0.6f),
+                                Color.Transparent
+                            ),
+                            startY = Float.POSITIVE_INFINITY,
+                            endY = 0f
+                        )
+                    )
+            )
         }
     }
 }
