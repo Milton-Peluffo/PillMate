@@ -16,7 +16,7 @@ import com.tomildev.pillmate.ui.theme.theme.FontDarkPurple
 import com.tomildev.pillmate.ui.theme.components.InputField
 import com.tomildev.pillmate.ui.theme.components.DayToggleButton
 import com.tomildev.pillmate.ui.theme.components.BackButton
-import com.tomildev.pillmate.ui.theme.navigations.AppScreen
+import com.tomildev.pillmate.ui.theme.navigations.AppScreens
 import com.tomildev.pillmate.ui.theme.theme.ButtonPurple
 import com.tomildev.pillmate.ui.theme.theme.FontDarkPurple2
 import com.tomildev.pillmate.ui.theme.theme.FontSoftPurple
@@ -44,10 +44,8 @@ fun AlarmFormScreen(
     ) {
         BackButton(
             onClick = {
-                navController.navigate(AppScreen.AlarmListScreen.route)
-            },
-            iconRes = R.drawable.arrow_left,
-            contentDescription = "Atrás",
+                navController.navigate(AppScreens.AlarmListScreen.route)
+            }
         )
 
         Text(

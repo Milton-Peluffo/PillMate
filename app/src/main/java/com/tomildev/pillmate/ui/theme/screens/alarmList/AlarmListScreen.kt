@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.tomildev.pillmate.R
 import com.tomildev.pillmate.ui.theme.components.AlarmCard
-import com.tomildev.pillmate.ui.theme.navigations.AppScreen
+import com.tomildev.pillmate.ui.theme.navigations.AppScreens
 import com.tomildev.pillmate.ui.theme.theme.FontDarkPurple
 import com.tomildev.pillmate.ui.theme.theme.FontDarkPurple2
 
@@ -54,7 +54,9 @@ fun AlarmListScreen(
                             modifier = Modifier.align(Alignment.Center)
                         )
                         IconButton(
-                            onClick = { onMenuClick() },
+                            onClick = {
+                                navController.navigate(AppScreens.SettingsScreen.route)
+                            },
                             modifier = Modifier.align(Alignment.CenterEnd)
                         ) {
                             Icon(
@@ -73,7 +75,7 @@ fun AlarmListScreen(
         floatingActionButton = {
             FloatingActionButton(
                 onClick = {
-                    navController.navigate(AppScreen.AlarmFormScreen.route)
+                    navController.navigate(AppScreens.AlarmFormScreen.route)
                 },
                 containerColor = Color(0xFF9B8AFF),
                 contentColor = Color.White,

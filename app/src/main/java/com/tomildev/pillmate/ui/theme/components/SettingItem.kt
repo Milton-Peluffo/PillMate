@@ -29,14 +29,16 @@ import com.tomildev.pillmate.ui.theme.theme.FontDarkPurple2
 @Composable
 fun SettingItem(
     title: String,
-    icon: Painter,
+    icon: Painter? = null,
+    value: String? = null,
     onClick: () -> Unit
 ) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .height(70.dp)
-            .clickable { },
+            .padding(vertical = 5.dp)
+            .height(60.dp)
+            .clickable { onClick() },
         shape = RoundedCornerShape(16.dp),
         colors = CardDefaults.cardColors(containerColor = Color.White),
         elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
@@ -51,26 +53,47 @@ fun SettingItem(
             Text(
                 text = title,
                 color = FontDarkPurple2,
-                fontSize = 20.sp,
+                fontSize = 24.sp,
                 fontWeight = FontWeight.Bold
             )
-            Icon(
-                painter = icon,
-                contentDescription = null,
-                tint = FontDarkPurple2,
-                modifier = Modifier.size(40.dp)
-            )
+
+            if (value != null) {
+                Text(
+                    text = value,
+                    color = FontDarkPurple2,
+                    fontSize = 20.sp,
+                    fontWeight = FontWeight.Normal
+                )
+            } else if (icon != null) {
+                Icon(
+                    painter = icon,
+                    contentDescription = null,
+                    tint = FontDarkPurple2,
+                    modifier = Modifier.size(40.dp)
+                )
+            }
         }
     }
 }
 
-@Preview( showBackground = true,showSystemUi = true)
+@Preview(showBackground = true, showSystemUi = true)
 @Composable
-fun SettingItemPreview(){
-    SettingItem(
-        title = "Hola",
-        icon = painterResource(id = R.drawable.clock),
-        onClick = {}
+fun SettingItemPreview() {
+    ColumnPreview()
+}
 
-    )
+@Composable
+fun ColumnPreview() {
+    androidx.compose.foundation.layout.Column {
+        SettingItem(
+            title = "Tema de la app",
+            icon = painterResource(id = R.drawable.sun_icon),
+            onClick = {}
+        )
+        SettingItem(
+            title = "Lenguaje",
+            value = "Español",
+            onClick = {}
+        )
+    }
 }

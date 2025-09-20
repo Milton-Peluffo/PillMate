@@ -1,8 +1,8 @@
 package com.tomildev.pillmate.ui.theme.navigations
 
-sealed class AppScreen(val route: String) {
-    object SplashScreen : AppScreen("splash_screen")
-    object AlarmFormScreen : AppScreen("alarm_form_screen")
-    object AlarmListScreen : AppScreen("alarm_list_screen")
-    object SettingsScreen : AppScreen("settings_screen")
+sealed class AppScreens(val route: String) {
+    object SplashScreen : AppScreens("splash_screen")
+    object AlarmFormScreen : AppScreens("alarm_form_screen")
+    object AlarmListScreen : AppScreens("alarm_list_screen")
+    object SettingsScreen : AppScreens("settings_screen")
 }

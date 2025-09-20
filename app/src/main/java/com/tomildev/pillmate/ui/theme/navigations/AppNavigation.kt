@@ -15,18 +15,18 @@ fun AppNavigation(){
     val navController = rememberNavController()
     NavHost(
         navController = navController,
-        startDestination = AppScreen.SplashScreen.route
+        startDestination = AppScreens.SplashScreen.route
     ) {
-        composable(AppScreen.SplashScreen.route) {
+        composable(AppScreens.SplashScreen.route) {
             SplashScreen(navController)
         }
-        composable(AppScreen.AlarmFormScreen.route) {
+        composable(AppScreens.AlarmFormScreen.route) {
             AlarmFormScreen(navController)
         }
-        composable(AppScreen.SettingsScreen.route){
+        composable(AppScreens.SettingsScreen.route){
             SettingsScreen((navController))
         }
-        composable(AppScreen.AlarmListScreen.route) {
+        composable(AppScreens.AlarmListScreen.route) {
             //Just Temp Alarms for show something on alarmList
             val sampleAlarms = listOf(
                 Alarm("Sulfato de Albuterol", "3h 20m", "08:00 AM", "Todos los días", true),

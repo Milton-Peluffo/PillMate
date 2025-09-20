@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
 import com.tomildev.pillmate.R
-import com.tomildev.pillmate.ui.theme.navigations.AppScreen
+import com.tomildev.pillmate.ui.theme.navigations.AppScreens
 import com.tomildev.pillmate.ui.theme.theme.FontDarkPurple
 import kotlinx.coroutines.delay
 
@@ -26,7 +26,7 @@ fun SplashScreen(navController: NavHostController) {
     LaunchedEffect(key1 = true) {
         delay(3000)
         navController.popBackStack()
-        navController.navigate(AppScreen.AlarmListScreen.route)
+        navController.navigate(AppScreens.AlarmListScreen.route)
     }
 
     Splash()
