@@ -7,6 +7,7 @@ import androidx.navigation.compose.rememberNavController
 import com.tomildev.pillmate.ui.theme.screens.alarmForm.AlarmFormScreen
 import com.tomildev.pillmate.ui.theme.screens.alarmList.AlarmListScreen
 import com.tomildev.pillmate.ui.theme.screens.alarmList.Alarm
+import com.tomildev.pillmate.ui.theme.screens.settings.SettingsScreen
 import com.tomildev.pillmate.ui.theme.screens.splashScreen.SplashScreen
 
 @Composable
@@ -21,6 +22,9 @@ fun AppNavigation(){
         }
         composable(AppScreen.AlarmFormScreen.route) {
             AlarmFormScreen(navController)
+        }
+        composable(AppScreen.SettingsScreen.route){
+            SettingsScreen((navController))
         }
         composable(AppScreen.AlarmListScreen.route) {
             //Just Temp Alarms for show something on alarmList
